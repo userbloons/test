@@ -85,10 +85,12 @@
     <script src="https://userbloons.github.io/test/boxedwine-shell.js"></script>
     <script async type="text/javascript" src="https://userbloons.github.io/test/boxedwine.js"></script>
 
-    <!-- Safe auto-launch: only redirect if no parameters -->
+    <!-- Safe auto-launch: only redirect when running on HTTP/HTTPS -->
     <script>
-      if (!window.location.search) {
-        window.location.href = window.location.pathname + "?app=JM&p=JumboMario.exe";
+      if (location.protocol === "http:" || location.protocol === "https:") {
+        if (!window.location.search) {
+          window.location.href = window.location.pathname + "?app=JM&p=JumboMario.exe";
+        }
       }
     </script>
 
